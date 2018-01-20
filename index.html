@@ -7,17 +7,44 @@
 <h2 style="color:lightblue">Dumbot</h2>
 <div style='background-color:white;border-radius:.4em;'><p id="a"></p></div>
 <p style="text-align:right"><img src="./thinkbubble.png"></img></p>
-<p id="b" style="color:red"></b>
+<p id="b"></b>
+<p id="mesg"></p>
+<div id=pB1 style="border-radius:.4em"><div id="pB1a" style="border-radius:.4em;"></div></div>
+<div style="border-radius:.4em;background-color:white" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='white'" onclick="pollbar(1)"><p id="a1"></p></div>
+<div id=pB2 style="border-radius:.4em"><div id="pB2a" style="border-radius:.4em;"></div></div>
+<div style="border-radius:.4em;background-color:white" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='white'" onclick="pollbar(2)"><p id="a2"></p></div>
+<div id=pB3 style="border-radius:.4em"><div id="pB3a" style="border-radius:.4em;"></div></div>
+<div style="border-radius:.4em;background-color:white" onmouseover="this.style.backgroundColor='lightgray'" onmouseout="this.style.backgroundColor='white'" onclick="pollbar(3)"><p id="a3"></p></div>
+
 <p style="color:lime">New question</p>
-<p><img src="./arrow.png" onmouseover="this.src='./arrows.gif'" onmouseout="this.src='./arrow.png'"></img></p>
 <img src="./button/f1.png" onmouseover="this.src='./button/a1.gif'" onmousedown="this.src='./button/fp.png'" onmouseup="this.src='./button/f12.png'" onmouseout="this.src='./button/a2.gif'" onclick="compute()"></img>
-<p style="font-size:.8em">Step 1: Read the un-logical question.</p>
-<p style="font-size:.8em">
-Step 2: Try to make a logical answer.</p>
+<script>
+//the 6 core beginning words of a question, plus everything else (:P) :
+
+var step1=["Who","What?!","When","Where","Why","How",""];
+
+var step2=["could","would","did","should","might","must","may","can","did","does","will"];
+
+var step3=["you","your dog","your brother","your sister","Dad","Mom","Grandma","Grandpa","your cat","your fish","your friend","Chuck Noris","an athlete","a chef","a surgeon","a clown","a spec of dust","pizza","somebody","that guy","the government","the planet","a bird","aliens","a computer","your dentist","the President","the King","the mechanic","we","they","that cuddly creature","that vampire","your phone"];
+
+var step4=["eat","explode","kill","take care of","drive to","fly to","swim to","jump to","dominate over","lose to","make","bake","flatten","break into","comment about","race","feed","jump over","teleport to","construct","pickle","pester","flip over","advertise","play with","conquer","become","obtain","infiltrate","question","plead to","capture","steal","crave","read about","watch","fight","fight over","cry over","think about","fetch","clean","repair","run over","punch","karate-chop","drink","buy","have","chuck","cuddle","yell at","fall off of","topple over"];
+
+var step5=["","a burger","a videogame","a coin","a pepper","a house","the world","playing cards","a violin","the President","a portal gun","water","air","the beach","mars","the moon","your teacher","a bubble","the ocean","a car","China","your computer","doritoes","awesomeness","a book","an imagination","life","death","the center of the earth","hotdogs","dust bunnies","a helicopter","a tank","the universe","math","homework","cheese","you","a superhero","strength","weakness","candy","ice cream","a pirate","the brain","school","the playground","us","them","the squirrel","steak","pork-chop","authority","breakfast","a vampire","hair","nothing","everything","a porqupine","outer space","War and Peace"];
+//This either has "?" or "?!" inside.
+var step6;
+
+var s1r;
+var s2r;
+var s3r;
+var s4r;
+var s5r;
+</script>
+<script src="answer.js"></script>
 <script src="script.js"></script>
+
 </body>
-<footer style="font-size:.5em;color:gray">
-<p style="color:blue">Disclaimer:Dumbot's code is dumb. (XD) Everything Dumbot says is completely random, and anything that <i>sounds</i> like it relates to something is purly coincidental.</p>This project was created by Zachary Mitchell in 2016
+<footer style="font-size:.5em;color:lightgray">
+<p style="color:blue">Disclaimer:Dumbot's code is dumb. (XD) Everything Dumbot says is completely random, and anything that <i>sounds</i> like it relates to something is purly coincidental.</p>Made by Zachary Mitchell from 2016, to 2017.
 
 <h2 class="buttonLink" title="NOW! :o ...just kidding take your time :P" style="color:lime" onclick="credits()"><img src="./arrowcredits1.png" id="d" width="50em" height="50em"></img>credits(click me)<span style="font-size:.4em;color:red">(Warning!! contains spoilers!!)</span></h2>
 <p id="c" style="color:lime"></p>

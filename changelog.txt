@@ -3,3 +3,4 @@
 (???/summer/16) Grammar fixes, added new words.
 (???/summer/16) added "your phone" as suggested by RCAce 95
 (7/12/16) added "War and peace" as suggested by RCAce 95, more grammatical fixes, and a credits section
+(2/4/2017) After 2 weeks of multitasking between this, and college, a major feature was added... ANSWERS! Click on one to see which is the most popular! This release is major, and gives the code a big, and overdue makover.
