@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <title>Dumbot</title>
+</head>
+<body style="font-weight:bold;text-align:center;font-size:2em;background-color:purple;background-image:url('./qm.png');color:orange;font-family:Pooh,Ubuntu">
+<h2 style="color:lightblue">Dumbot</h2>
+<div style='background-color:white;border-radius:.4em;'><p id="a"></p></div>
+<p style="text-align:right"><img src="./thinkbubble.png"></img></p>
+<p id="b" style="color:red"></b>
+<p style="color:lime">New question</p>
+<p><img src="./arrow.png" onmouseover="this.src='./arrows.gif'" onmouseout="this.src='./arrow.png'"></img></p>
+<img src="./button/f1.png" onmouseover="this.src='./button/a1.gif'" onmousedown="this.src='./button/fp.png'" onmouseup="this.src='./button/f12.png'" onmouseout="this.src='./button/a2.gif'" onclick="compute()"></img>
+<p style="font-size:.8em">Step 1: Read the un-logical question.</p>
+<p style="font-size:.8em">
+Step 2: Try to make a logical answer.</p>
+<script src="script.js"></script>
+</body>
+<footer style="font-size:.5em;color:gray">
+<p style="color:blue">Disclaimer:Dumbot's code is dumb. (XD) Everything Dumbot says is completely random, and anything that <i>sounds</i> like it relates to something is purly coincidental.</p>This project was created by Zachary Mitchell in 2016
+
+<h2 class="buttonLink" title="NOW! :o ...just kidding take your time :P" style="color:lime" onclick="credits()"><img src="./arrowcredits1.png" id="d" width="50em" height="50em"></img>credits(click me)<span style="font-size:.4em;color:red">(Warning!! contains spoilers!!)</span></h2>
+<p id="c" style="color:lime"></p>
+
+<script>
+var roll = document.getElementById("c");
+var arrow = document.getElementById("d");
+var tf=false;
+function credits(){
+switch (tf){
+case false:
+tf=true;
+arrow.src="./arrowcredits2.png";
+roll.innerHTML="<p>Your phone, and War and peace suggested by:</p> <p><a href='https://www.youtube.com/channel/UC9r-4leMrJqmf8jpQFWAy-g'>RC ace 95</a></p>";
+break;
+case true:
+tf=false;
+arrow.src="./arrowcredits1.png";
+roll.innerHTML="";
+}
+}
+</script>
+</footer>
+</html>
