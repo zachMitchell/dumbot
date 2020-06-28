@@ -115,8 +115,8 @@ function answer() {
 function printAnswer() {
     for (i = 0; i < 3; i++) {
         var colors = ["#FF0000", "#FF5500", "#FF8400", "#FF9900", "#FFC400", "#FFE202", "#FFFF03", "#C0FF03", "#53FF04", "#02FF70", "#02FFCD", "#03FFEF", "#00A6FF", "#0037FF", "#0B03FF", "#9A01FF", "#EF03FF", "#FF0379"];
-        questionElement.style.color = colors[random(colors.length)];
-        questionElement.innerHTML = answer();
+        window["a"+(i+1)].style.color = colors[random(colors.length)];
+        window["a"+(i+1)].innerHTML = answer();
     }
 }
 
