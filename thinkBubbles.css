@@ -1,0 +1,103 @@
+/* Think bubbles */
+.tbContainer{
+    float:right;
+    margin-right: 18%;
+    margin-top: -1em;
+}
+.thinkBubble{
+    background-color: white;
+    border-radius: 2em;
+    margin-bottom:.2em;
+}
+.thinkBubble.tb1{
+    width:1.5em;
+    height:1.5em;
+    margin-right:2em;
+    animation-name: bubble1;
+
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-delay: .6s;
+}
+.thinkBubble.tb2 {
+    width: 1em;
+    height: 1em;
+    margin-left: 1.5em;
+    margin-top: -.5em;
+    animation-name: bubble2;
+
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+    animation-delay: .3s;
+}
+.thinkBubble.tb3 {
+    width: .5em;
+    height: .5em;
+    margin-left: 2.7em;
+    margin-top: -.5em;
+
+    animation-name: bubble3;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+
+/* Animations */
+@keyframes bubble1{
+    from{
+        width: 1.5em;
+        height:1.5em;
+    }
+    to{
+        width: 1.2em;
+        height:1.2em;
+    }
+}
+@keyframes bubble2{
+    from{
+        width: 1em;
+        height:1em;
+    }
+    to{
+        width: .7em;
+        height: .7em;
+    }
+}
+@keyframes bubble3{
+    from{
+        width: .5em;
+        height:.5em;
+    }
+    to{
+        width: .3em;
+        height:.3em;
+    }
+}
+
+/* Question bubble */
+.questionBubble{
+    background-color: white;
+    margin-bottom: .5em;
+    width: 50%;
+    margin-left: 25%;
+    padding: 5px;
+    border-radius: 50px;
+
+    animation-name: qBubble;
+    animation-duration: 4s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+
+}
+
+@keyframes qBubble{
+    from{
+        padding: 5px;
+    }
+
+    to{
+        padding:9px;
+    }
+}

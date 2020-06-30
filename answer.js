@@ -1,5 +1,5 @@
 //These variables need to be sorted out into a static object...
-var colors = ["#FF0000", "#FF5500", "#FF8400", "#FF9900", "#FFC400", "#FFE202", "#FFFF03", "#C0FF03", "#53FF04", "#02FF70", "#02FFCD", "#03FFEF", "#00A6FF", "#0037FF", "#0B03FF", "#9A01FF", "#EF03FF", "#FF0379"];
+var colors = colorTools.hex2RgbArray(["#FF0000", "#FF9900", "#FFE202", "#53FF04", "#02FF70", "#03FFEF", "#00A6FF", "#0040FF" , "#9A01FF", "#FF0379"]);
 var answered = false;
 //DOM collections are live so you can access this at any time in the code.
 var answerBubbles = document.getElementsByClassName('answerBubble');
@@ -31,7 +31,7 @@ var answerComponents = {
     when:{
         preTime:["", "Exactly", "Almost", "Slightly"],
         time:[
-            ["before"],
+            ["before", "prior to"],
             ["while", "when", "during the time"],
             ["after"]
         ],
@@ -45,6 +45,9 @@ var answerComponents = {
         punct:[".", "...", "!","?","?!"]
     }
 }
+
+//Make a random color based on a collection of presets.
+var rndColor = (colorArr = colors)=> colorTools.percentToColor(Math.floor(Math.random()*101),0,0,colorArr,1);
 
 //returns a random item from an array via the arguments.
 var rndItem = e=>e[rnd(e.length)];
@@ -72,7 +75,7 @@ var answer = (index,sentence)=>window[questionMap[sentence[0]]](index % 3,senten
 //converts to html
 function printAnswer(sentence) {
     for (var i = 0; i< answerBubbles.length;i++) {
-        answerBubbles[i].style.color = rndItem(colors);
+        answerBubbles[i].style.color = rndColor();
         answerBubbles[i].innerHTML = answer(i,sentence);
     }
 }
