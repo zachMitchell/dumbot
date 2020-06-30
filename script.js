@@ -1,5 +1,4 @@
-//the 6 core beginning words of a question, plus everything else (:P) :
-
+//the 6 core beginning words of a question, plus everything else (:P)
 var grammarConstructs = [
     ["Who", "What?!", "When", "Where", "Why", "How", ""],
     ["could", "would", "did", "should", "might", "must", "may", "can", "did", "does", "will"],
@@ -9,8 +8,6 @@ var grammarConstructs = [
 ];
 
 function compute() {
-    pollbar(0);
-
     var punctuation = '?';
 
     //Grab a random phrase for each part of the sentence
@@ -29,8 +26,5 @@ function compute() {
         sentence.pop();
     }
 
-    //Insert question:
-    questionElement.innerHTML = sentence.join(' ')+punctuation;;
-    printAnswer(sentence);
+    return [sentence,punctuation];
 }
-compute();

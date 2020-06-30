@@ -14,6 +14,28 @@
             color:orange;
             font-family:"Comic Sans", "Ubuntu";
         }
+        .answerBubble{
+            border-radius:.4em;
+            background-color:white;
+            margin-bottom:.5em;
+        }
+        .answerBubble:hover{
+            background-color: lightgrey;
+        }
+        
+        .hidden{
+            display: none;
+        }
+
+        .pollResult{
+            border: 6px solid grey;
+            border-radius:.4em;
+        }
+
+        .pollResult div{
+            border-radius:.4em;
+        }
+
     </style>
 </head>
 
@@ -23,32 +45,32 @@
         <p id="questionElement"></p>
     </div>
     <p style="text-align:right"><img src="./thinkbubble.png"></img></p>
-    <p id="b"></b>
     <p id="mesg"></p>
-    <div id=pB1 style="border-radius:.4em">
-        <div id="pB1a" style="border-radius:.4em;"></div>
+
+    <!-- Answers and poll results -->
+    <div class="pollResult">
+        <div>%</div>
     </div>
-    <div style="border-radius:.4em;background-color:white" onmouseover="this.style.backgroundColor='lightgray'"
-        onmouseout="this.style.backgroundColor='white'" onclick="pollbar(1)">
-        <p id="a1"></p>
+    <div class="answerBubble">
+        <p></p>
     </div>
-    <div id=pB2 style="border-radius:.4em">
-        <div id="pB2a" style="border-radius:.4em;"></div>
+
+    <div class="pollResult">
+        <div>%</div>
     </div>
-    <div style="border-radius:.4em;background-color:white" onmouseover="this.style.backgroundColor='lightgray'"
-        onmouseout="this.style.backgroundColor='white'" onclick="pollbar(2)">
-        <p id="a2"></p>
+    <div class="answerBubble">
+        <p></p>
     </div>
-    <div id=pB3 style="border-radius:.4em">
-        <div id="pB3a" style="border-radius:.4em;"></div>
+
+    <div class="pollResult">
+        <div>%</div>
     </div>
-    <div style="border-radius:.4em;background-color:white" onmouseover="this.style.backgroundColor='lightgray'"
-        onmouseout="this.style.backgroundColor='white'" onclick="pollbar(3)">
-        <p id="a3"></p>
+    <div class="answerBubble">
+        <p></p>
     </div>
 
     <p style="color:lime">New question</p>
-    <img src="./button/f1.png" onmouseover="this.src='./button/a1.gif'" onmousedown="this.src='./button/fp.png'"
+    <img src="./button/f1.png" id="questionButton" onmouseover="this.src='./button/a1.gif'" onmousedown="this.src='./button/fp.png'"
         onmouseup="this.src='./button/f12.png'" onmouseout="this.src='./button/a2.gif'" onclick="compute()"></img>
     
     <script>
@@ -57,33 +79,33 @@
     <script src="answer.js"></script>
     <script src="script.js"></script>
 
+    <script>
+        //Assign each bubble to show the answer from all the clickerbots ;P
+        for(var i of document.getElementsByClassName('answerBubble')) i.onclick = pollbar;
+
+        questionButton.onclick = function(){
+            clearPolls();
+            var question = compute();
+            questionElement.innerHTML = question[0].join(' ') + question[1];
+            printAnswer(question[0]);
+        }
+
+        //Run first time:
+        questionButton.click();
+    </script>
+
 </body>
 <footer style="font-size:.5em;color:lightgray">
     <p style="color:blue">Disclaimer:Dumbot's code is dumb. (XD) Everything Dumbot says is completely random, and
         anything that <i>sounds</i> like it relates to something is purly coincidental.</p>Made by Zachary Mitchell from
     2016, to 2017.
 
-    <h2 class="buttonLink" title="NOW! :o ...just kidding take your time :P" style="color:lime" onclick="credits()"><img
-            src="./arrowcredits1.png" id="d" width="50em" height="50em"></img>credits(click me)<span
-            style="font-size:.4em;color:red">(Warning!! contains spoilers!!)</span></h2>
-    <p id="c" style="color:lime"></p>
+    <h2 id="creditsLnk" style="color:lime"><img src="./arrowcredits2.png" id="arrow" width="50em" height="50em"></img>credits(click me)<span style="font-size:.4em;color:red">(Warning!! contains spoilers!!)</span></h2>
+    <div id='creditsDiv' class="hidden"><p>Your phone, and War and peace suggested by:</p> <a href='https://www.youtube.com/channel/UC9r-4leMrJqmf8jpQFWAy-g'>RC ace 95</a></div>
 
     <script>
-        var roll = document.getElementById("c");
-        var arrow = document.getElementById("d");
-        var tf = false;
-        function credits() {
-            switch (tf) {
-                case false:
-                    tf = true;
-                    arrow.src = "./arrowcredits2.png";
-                    roll.innerHTML = "<p>Your phone, and War and peace suggested by:</p> <p><a href='https://www.youtube.com/channel/UC9r-4leMrJqmf8jpQFWAy-g'>RC ace 95</a></p>";
-                    break;
-                case true:
-                    tf = false;
-                    arrow.src = "./arrowcredits1.png";
-                    roll.innerHTML = "";
-            }
+        creditsLnk.onclick = function(){
+            creditsDiv.classList[creditsDiv.className.indexOf('hidden') > -1?'remove':'add']('hidden');
         }
     </script>
 </footer>
