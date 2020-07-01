@@ -12,7 +12,7 @@
             font-size:2em;
             background-color:#971497;
             color:orange;
-            font-family:"Comic Sans", "Ubuntu";
+            font-family:"Comic Sans", "Helvetica Neue", "Ubuntu";
         }
         .answerBubble{
             border-radius:.4em;
@@ -105,63 +105,15 @@
     
     <script>
         var rnd = e=>Math.floor(Math.random() * e);
+        //turns a random item from an array via the arguments.
+        var rndItem = e => e[rnd(e.length)];
     </script>
     <script src="qmbg.js"></script>
     <script src="button/button.js"></script>
     <script src="colorTools.js"></script>
     <script src="answer.js"></script>
     <script src="script.js"></script>
-
-    <script>
-        var debug = false;
-        //Something shiny!! Wanted to spruce the app up so here's a moving background!
-        var bgObj;
-        var qm = document.createElement('img');
-        qm.onload = ()=>{
-            detectFramerate.go(frameRate=>{
-                bgObj = new qmbg(qm,canvasBG,.5,1000/frameRate);
-                bgObj.animate();
-    
-                window.onresize = function(){
-                    canvasBG.width = window.innerWidth * .995;
-                    canvasBG.height = window.innerHeight * 1.05;
-                }
-                //Update Framerate every so often
-                setInterval(()=>detectFramerate.go(fr=>{bgObj.frameRate = 1000/fr;if(debug)console.log(fr)}),7000);
-
-                window.onresize();
-            });
-        }
-        qm.src = 'qm.svg';
-
-
-        //Assign each bubble to show the answer from all the clickerbots ;P
-        for(var i of document.getElementsByClassName('answerBubble')) i.onclick = pollbar;
-
-        buttonContainer.onclick = function(){
-            clearPolls();
-            var question = compute();
-            questionElement.innerHTML = question[0].join(' ') + question[1];
-            printAnswer(question[0]);
-        }
-
-        //Run first time:
-        buttonContainer.click();
-
-        answerModeCheck.onchange = function(){
-            var display = this.checked?'':'none';
-            for(var i of document.getElementsByClassName('answerBubble'))
-                i.style.display = display;
-
-            if(display == 'none') for(var i of document.getElementsByClassName('pollResult'))
-                i.style.display = display;
-            else answered = false;
-        }
-
-        answerModeCheck.onchange();
-
-
-    </script>
+    <script src='dom.js'></script>
 
 </body>
 <footer style="font-size:.5em;color:lightgray">

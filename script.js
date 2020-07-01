@@ -1,3 +1,4 @@
+//I'm deciding not to change the filename and the name of contents of this file from it's past varinat because it makes it easier to look at a side-by-side comparison. Normally I would, but it's fun to time travel.
 //the 6 core beginning words of a question, plus everything else (:P)
 var grammarConstructs = [
     ["Who", "What?!", "When", "Where", "Why", "How", ""],
