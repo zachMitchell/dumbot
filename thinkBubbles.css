@@ -15,7 +15,7 @@
     margin-right:2em;
     animation-name: bubble1;
 
-    animation-duration: 4s;
+    animation-duration: 3s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-delay: .6s;
@@ -27,7 +27,7 @@
     margin-top: -.5em;
     animation-name: bubble2;
 
-    animation-duration: 4s;
+    animation-duration: 3s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
     animation-delay: .3s;
@@ -39,7 +39,7 @@
     margin-top: -.5em;
 
     animation-name: bubble3;
-    animation-duration: 4s;
+    animation-duration: 3s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
 }
@@ -86,7 +86,7 @@
     border-radius: 50px;
 
     animation-name: qBubble;
-    animation-duration: 4s;
+    animation-duration: 3s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
 
@@ -98,6 +98,6 @@
     }
 
     to{
-        padding:9px;
+        padding:10px;
     }
 }

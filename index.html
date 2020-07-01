@@ -53,6 +53,7 @@
 
     <!-- Think bubbles got large so here's an external file -->
     <link type="text/css" rel="stylesheet" href="./thinkBubbles.css">
+    <link type="text/css" rel="stylesheet" href="./button/button.css">
 
 </head>
 
@@ -95,13 +96,18 @@
     </div>
 
     <p style="color:lime">New question</p>
-    <img src="./button/f1.png" id="questionButton" onmouseover="this.src='./button/a1.gif'" onmousedown="this.src='./button/fp.png'"
-        onmouseup="this.src='./button/f12.png'" onmouseout="this.src='./button/a2.gif'" onclick="compute()"></img>
+    <div id="buttonContainer">
+        <img id='btnTop' src='button/btnTop.svg'>
+        <img src='button/btnBase.svg'>
+        <img id='btnQm' src='qm.svg'>
+    </div>
+    <input id="answerModeCheck" type="checkbox"> Clickerbot Polls!
     
     <script>
         var rnd = e=>Math.floor(Math.random() * e);
     </script>
     <script src="qmbg.js"></script>
+    <script src="button/button.js"></script>
     <script src="colorTools.js"></script>
     <script src="answer.js"></script>
     <script src="script.js"></script>
@@ -132,7 +138,7 @@
         //Assign each bubble to show the answer from all the clickerbots ;P
         for(var i of document.getElementsByClassName('answerBubble')) i.onclick = pollbar;
 
-        questionButton.onclick = function(){
+        buttonContainer.onclick = function(){
             clearPolls();
             var question = compute();
             questionElement.innerHTML = question[0].join(' ') + question[1];
@@ -140,7 +146,21 @@
         }
 
         //Run first time:
-        questionButton.click();
+        buttonContainer.click();
+
+        answerModeCheck.onchange = function(){
+            var display = this.checked?'':'none';
+            for(var i of document.getElementsByClassName('answerBubble'))
+                i.style.display = display;
+
+            if(display == 'none') for(var i of document.getElementsByClassName('pollResult'))
+                i.style.display = display;
+            else answered = false;
+        }
+
+        answerModeCheck.onchange();
+
+
     </script>
 
 </body>

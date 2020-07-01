@@ -1,0 +1,91 @@
+#buttonContainer{
+    margin-left:40%;
+    width:200px;
+    height:200px;
+}
+
+#buttonContainer img{
+    position:absolute;
+}
+
+/* So for some reason if you put the top pieces of the button in the back,
+it stops elements from being selected. Therefore this is here */
+#btnTop, #btnQm{
+    z-index: -1;
+}
+
+#btnQm{
+    transform: rotate(180deg);
+    width: 80px;
+    height: 120px;
+    margin-left: 1.8em;
+    margin-top: .5em;
+}
+
+#btnQm.mouseover{
+    animation-name:btnQmMouseover;
+    animation-duration: .8s;
+    animation-fill-mode: forwards;
+}
+#btnQm.mouseout{
+    transform: rotate(0deg);
+    animation-name:btnQmMouseout;
+    animation-duration: .5s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+}
+
+@keyframes btnQmMouseover {
+    to{
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes btnQmMouseout{
+    to{
+        transform: rotate(180deg);
+    }
+}
+
+/* Button press */
+#btnQm.press{
+    transform: rotate(0deg);
+    margin-top: .5em;
+    animation-name:btnQmPress;
+    animation-duration: .1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+#btnQm.release{
+    transform: rotate(0deg);
+}
+
+#btnTop.press{
+    margin-top: 0em;
+    animation-name:btnTopPress;
+    animation-duration: .1s;
+    animation-fill-mode: forwards;
+    animation-timing-function: linear;
+}
+
+@keyframes btnQmPress{
+    to{
+        margin-top: 1.3em;
+    }
+}
+@keyframes btnTopPress{
+    to{
+        margin-top: .7em;
+    }
+}
+
+@media screen and (max-width:1000px){
+    #buttonContainer{
+        margin-left:35%;
+    }
+}
+@media screen and (max-width:800px){
+    #buttonContainer{
+        margin-left:20%;
+    }
+}

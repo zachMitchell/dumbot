@@ -21,7 +21,7 @@ var answerComponents = {
     yesNoMaybe: [
         ["Yes!", "Absolutely!", "Obviously YES", "<strong>BIG YES</strong>", "yesyesyesyesyesyes!", "yurp :3", "lulz yez", "Yes sir!"],
         ["No!", "Nah...", "nupe", "WHAT?! NO!", "nononononononono", "\"Not today Zurg!\"", "No-Way...", "Just... no.", "Absolutely! <i>Not!</i>"],
-        ["Maybe...", "Possibly...", "Yeah, but... maybe not...", "Yes and no.", "Well...", "That's a good question...", "THATS A TERRIBLE QUESTION!", "...Why?", "Well that's confusing -_-"]
+        ["Maybe...", "Possibly...", "Yeah, but... maybe not...", "Yes and no.", "Well...", "That's a good question...", "THATS A TERRIBLE QUESTION!", "...Why?", "Well that's confusing -_-","Yes, but actually no","YNeos"]
     ],
 
     whoWhy:{
