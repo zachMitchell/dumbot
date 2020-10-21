@@ -7,7 +7,7 @@ var bgObj;
 var qm = document.createElement('img');
 qm.onload = () => {
     detectFramerate.go(frameRate => {
-        bgObj = new qmbg(qm, canvasBG, .5, 1000 / frameRate);
+        bgObj = new qmbg(qm, canvasBG, .13, 1000 / frameRate);
         bgObj.animate();
 
         window.onresize = function () {
